@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "Main Page";
+
+}
+
+<section id="Showcase">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="swiper-content">
+                    <img id="img" src="~/Content/Images/img.jpg" alt="img" />
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-content">
+                    <img src="@Href("~/Content/Images/img-1.jpg")" alt="" class="swiper-img">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-content">
+                    <img src="~/Content/Images/img-2.jpg" alt="" class="swiper-img">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-content">
+                    <img src="~/Content/Images/img-3.jpg" alt="" class="swiper-img">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-content">
+                    <img src="~/Content/Images/img-4.jpg" alt="" class="swiper-img">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-content">
+                    <img src="~/Content/Images/img-5.jpg" alt="" class="swiper-img">
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-content">
+                    <img src="~/Content/Images/img-6.jpg" alt="" class="swiper-img">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container h-100 p-absolute">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-12">
+                <div class="content text-center p-5">
+                    <h1 class="content-header font-weight-bold text-uppercase">kadir uçar</h1>
+                    <p>Hi, I'm Kadir and I'm a software developer.</p>
+                    <p>My motto: "Let's make some mistakes, maybe we'll learn something."</p>
+                    <div class="content-links">
+                        <a href="#">#ucarkadir,</a>
+                        <a href="#">#computer,</a>
+                        <a href="#">#web,</a>
+                        <a href="#">#tango,</a>
+                        <a href="#">#TRX,</a>
+                        <a href="#">#slackline,</a>
+                        <a href="#">#bicycle,</a>
+                        <a href="#">#Gokova </a>
+                        <a href="#">#Akyaka</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slider main container -->
+</section>
+
+<section id="Contact">
+    <div class="container  h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-12">
+                <div class="content text-center p-5">
+                    <h1 class="content-header font-weight-bold text-uppercase">contact</h1>
+
+                    <div class="social-bg">
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="social-bx d-flex justify-content-center align-items-center">
+                                    <i class="fab pr-3 pl-3 fa-facebook-square"></i>
+                                    <a href="#">@@ucarkadir</a>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="social-bx d-flex justify-content-center align-items-center">
+                                    <i class="fab pr-3 pl-3 fa-github"></i>
+                                    <a href="#">@@ucarkadir</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6 ">
+                                <div class="social-bx d-flex justify-content-center align-items-center">
+                                    <i class="fab pr-3 pl-3 fa-twitter-square"></i>
+                                    <a href="#">@@ucarkadir</a>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="social-bx d-flex justify-content-center align-items-center">
+                                    <i class="fab pr-3 pl-3 fa-medium"></i>
+                                    <a href="#">@@ucarkadir</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="social-bx d-flex justify-content-center align-items-center">
+                                    <i class="fab pr-3 pl-3 fa-linkedin"></i>
+                                    <a href="#">@@ucarkadir</a>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="social-bx d-flex justify-content-center align-items-center">
+                                    <i class="fas pr-3 pl-3 fa-envelope-square"></i>
+                                    <a href="#">@@ucarkadir</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/swiper-initialize.js")"></script>
+    <script src="@Url.Content("~/Scripts/smooth.js")"></script>
+}
+
+
+@*@Scripts.Render("~/bundles/smooth")*@
+
+
+@*  Örnek script kullanımı
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryunobtrusive")
+
+        <script type="text/javascript">
+            your scrits
+        </script>
+    }
+*@

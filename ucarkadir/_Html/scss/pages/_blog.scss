@@ -1,0 +1,133 @@
+// pages/blog
+
+#Blog {
+    h1 {
+        font-size: 50px;
+        margin-top: 39px;
+        margin-bottom: 15px;
+        letter-spacing: -1.4px;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 30px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        letter-spacing: -0.8px;
+        line-height: 1.2;
+        font-weight: 700;
+    }
+
+    h3 {
+        font-size: 30px;
+        margin-bottom: 30px;
+        letter-spacing: -0.75px;
+        line-height: 1.25;
+        font-weight: 300;
+
+    }
+
+    p {
+        font-size: 20px;
+        margin-bottom: 30px;
+        line-height: 1.65;
+    }
+
+
+    color: $color-black;
+
+    .blog-header-img {
+        height: 500px;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        @include mq("portrait") {
+            height: 250px !important;
+        }
+
+        img {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            @include mq("portrait") {
+
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: translate(0, 0);
+            }
+        }
+
+        & .blog-cat {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.75));
+            color: $color-white;
+            padding: 65px 30px 15px 20px;
+            font-weight: 300;
+        }
+
+    }
+
+    .tags {
+        margin-bottom: 3rem;
+
+        h4 {
+            margin: 1rem 0rem !important;
+        }
+
+        a {
+            background-color: $color-soft-blue;
+            color: $color-white;
+            display: inline;
+            border-radius: .25rem !important;
+            padding: .5rem 1rem !important;
+            margin-right: .5rem !important;
+        }
+
+        a:hover {
+            background-color: $color-mid-blue;
+            text-decoration: none;
+        }
+    }
+}
+
+.modal-dialog {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+.modal-body {
+    position: relative;
+    padding: 0px;
+    min-height: 400px;
+    background: $color-white;
+}
+
+.close {
+    position: absolute;
+    right: -30px;
+    top: 0;
+    z-index: 999;
+    font-size: 2rem;
+    font-weight: normal;
+    color: $color-white;
+    opacity: 1;
+}
+
+#image {
+    min-height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
