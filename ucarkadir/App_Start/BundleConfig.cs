@@ -18,7 +18,7 @@ namespace ucarkadir
                       "~/Content/bootstrap.css",
                       "~/Content/mains.css",
                       "~/Content/swiper.css",
-                      "~/Contentfont-awesome.css"));
+                      "~/Content/fontawesome/all.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
