@@ -22,9 +22,9 @@ namespace ucarkadir
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/popper.js"));
+                        "~/Scripts/umd/popper.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(                       
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js",
                       "~/Scripts/swiper.js"));
@@ -39,3 +39,9 @@ namespace ucarkadir
         }
     }
 }
+/*
+  bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                    "~/Scripts/umd/popper.min.js",
+                  "~/Scripts/bootstrap.js",
+                  "~/Scripts/respond.js"));
+     */
