@@ -29,6 +29,7 @@ namespace ucarkadir.Models
 
         [Required]
         [DefaultValue(1)]
+        [Description("0 Pasif 1 Aktif")]
         public bool Status { get; set; }
 
         public virtual ICollection<Page> tPages { get; set; }

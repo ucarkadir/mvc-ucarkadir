@@ -194,7 +194,9 @@
     </Compile>
     <Compile Include="Models\Cat.cs" />
     <Compile Include="Models\Content.cs" />
+    <Compile Include="Models\Img.cs" />
     <Compile Include="Models\Page.cs" />
+    <Compile Include="Models\PageImg.cs" />
     <Compile Include="Objects\OperationResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
