@@ -11,6 +11,12 @@ namespace ucarkadir.Models
     [Table("tPage")]
     public class Page
     {
+        public Page()
+        {
+            tPageImgs = new HashSet<PageImg>();
+            tPageTags = new HashSet<PageTag>();
+        }
+
         [Key]
         public int IDPage { get; set; }
 
@@ -18,7 +24,9 @@ namespace ucarkadir.Models
         public int IDCat { get; set; }
         public virtual Cat tCat { get; set; }
 
+        [ForeignKey("FK_tPage_tContent")]
         public int IDContent { get; set; }
+        public virtual Content tContent { get; set; }
 
         [Required]
         [StringLength(255)]
@@ -54,6 +62,9 @@ namespace ucarkadir.Models
         [DefaultValue(1)]
         [Description("0 Pasif, 1 Aktif, 2 Diğer")]
         public int Status { get; set; }
+        
 
+        public virtual ICollection<PageImg> tPageImgs { get; set; }
+        public virtual ICollection<PageTag> tPageTags { get; set; }
     }
 }

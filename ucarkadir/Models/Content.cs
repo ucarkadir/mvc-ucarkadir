@@ -10,6 +10,11 @@ namespace ucarkadir.Models
     [Table("Content")]
     public class Content
     {
+        public Content()
+        {
+            tPages = new HashSet<Page>();
+        }
+
         [Key]
         public int IDContent { get; set; }
 
@@ -26,5 +31,7 @@ namespace ucarkadir.Models
         [Required]
         [Column(TypeName =("nvarchar(max)"))]
         public string Text { get; set; }
+
+        public virtual ICollection<Page> tPages{ get; set; }
     }
 }

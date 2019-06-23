@@ -11,9 +11,11 @@ namespace ucarkadir.Models
     public class PageImg
     {
         [Key, Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IDPage { get; set; }
 
         [Key, Column(Order = 1)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int IDImg { get; set; }
        
 

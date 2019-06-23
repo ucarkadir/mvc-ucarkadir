@@ -10,18 +10,18 @@ namespace ucarkadir.Models
     {
         public Img()
         {
-            this.tPageImgs = new HashSet<Img>();
+            this.tPageImgs = new HashSet<PageImg>();
         }
 
         [Key]
         public int IDImg { get; set; }
 
         [Required]
-        [StringLength()]
+        [StringLength(255)]
         public string FileName { get; set; }
 
 
-        public virtual ICollection<Img> tPageImgs { get; set; }
+        public virtual ICollection<PageImg> tPageImgs { get; set; }
 
 
     }

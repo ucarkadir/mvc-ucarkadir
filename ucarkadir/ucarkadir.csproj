@@ -197,6 +197,8 @@
     <Compile Include="Models\Img.cs" />
     <Compile Include="Models\Page.cs" />
     <Compile Include="Models\PageImg.cs" />
+    <Compile Include="Models\PageTag.cs" />
+    <Compile Include="Models\Tag.cs" />
     <Compile Include="Objects\OperationResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
