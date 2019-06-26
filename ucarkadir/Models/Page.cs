@@ -20,11 +20,11 @@ namespace ucarkadir.Models
         [Key]
         public int IDPage { get; set; }
 
-        [ForeignKey("FK_tPage_tCat")]
+        //[ForeignKey("FK_tPage_tCat")]
         public int IDCat { get; set; }
         public virtual Cat tCat { get; set; }
 
-        [ForeignKey("FK_tPage_tContent")]
+        //[ForeignKey("FK_tPage_tContent")]
         public int IDContent { get; set; }
         public virtual Content tContent { get; set; }
 
