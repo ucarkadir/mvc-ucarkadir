@@ -19,8 +19,9 @@ namespace ucarkadir.Models
         [Key]
         public int IDCat { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Bu alan boş olamaz")]
         [StringLength(20)]
+        [Index("IX_tCat_Name", IsUnique = true)]
         public string Name { get; set; }
 
         [Required]

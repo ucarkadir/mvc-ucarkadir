@@ -17,6 +17,7 @@ namespace ucarkadir.Models
 
         [Required]
         [StringLength(20)]
+        [Index("IX_tTag_Name", IsUnique = true)]
         public string Name { get; set; }
 
         [Required]

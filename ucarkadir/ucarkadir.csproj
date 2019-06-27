@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201906261524444_Initial.Designer.cs">
       <DependentUpon>201906261524444_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906270815310_IndexAndValidation.cs" />
+    <Compile Include="Migrations\201906270815310_IndexAndValidation.Designer.cs">
+      <DependentUpon>201906270815310_IndexAndValidation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cat.cs" />
     <Compile Include="Models\Content.cs" />
@@ -414,6 +418,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906261524444_Initial.resx">
       <DependentUpon>201906261524444_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906270815310_IndexAndValidation.resx">
+      <DependentUpon>201906270815310_IndexAndValidation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

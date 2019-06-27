@@ -35,11 +35,13 @@ namespace ucarkadir.Models
 
         [Required]
         [StringLength(255)]
+        [MinLength(3), MaxLength(255)]
         [Column(TypeName = "nvarchar")]
         public string ShortName { get; set; }
 
         [Required]
         [StringLength(255)]
+        [MinLength(3), MaxLength(255)]
         [Column(TypeName = "nvarchar")]
         public string Url { get; set; }
 
@@ -62,7 +64,14 @@ namespace ucarkadir.Models
         [DefaultValue(1)]
         [Description("0 Pasif, 1 Aktif, 2 Diğer")]
         public int Status { get; set; }
-        
+
+        /*
+            [DatabaseGenerated(DatabaseGeneratedOption.None)]
+            public int NonGenarateColumn { get; set; }
+
+            [NotMapped]
+            public float AverageGrade { set; get; }
+        */
 
         public virtual ICollection<PageImg> tPageImgs { get; set; }
         public virtual ICollection<PageTag> tPageTags { get; set; }
