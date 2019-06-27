@@ -28,5 +28,8 @@ namespace ucarkadir.Data
         public virtual DbSet<PageImg> tPageImgs { get; set; }
         public virtual DbSet<PageTag> tPageTags { get; set; }
         public virtual DbSet<Tag> tTags { get; set; }
+
+        public virtual DbSet<User> tUsers { get; set; }
+        public virtual DbSet<Role> tRoles { get; set; }
     }
 }
