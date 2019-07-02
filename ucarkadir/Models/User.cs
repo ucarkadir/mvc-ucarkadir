@@ -26,6 +26,19 @@ namespace ucarkadir.Models
         [Column(TypeName = ("nvarchar"))]
         public string UserPassword { get; set; }
 
-     
+
+        // test user login page
+        public static List<User> Init()
+        {
+            // first get IDRole for user             
+            return new List<User>
+            {
+                new User {IDUser = 1, UserName ="kadir", UserPassword = "ucar", IDRole = 0},
+                new User {IDUser = 2, UserName ="dilek", UserPassword = "ucar", IDRole = 1},
+                new User {IDUser = 3, UserName ="alisacit", UserPassword = "tezergil", IDRole = 1},
+                new User {IDUser = 3, UserName ="zeynep", UserPassword = "tezergil", IDRole = 1}
+            };
+        }
+
     }
 }

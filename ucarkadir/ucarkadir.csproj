@@ -188,6 +188,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\DashboardController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Data\KadirBlogDbContext.cs" />
@@ -401,6 +403,8 @@
     <Content Include="_Html\scss\pages\_category.scss" />
     <Content Include="_Html\scss\pages\_contact.scss" />
     <Content Include="_Html\scss\pages\_home.scss" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Dashboard\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
