@@ -81,5 +81,13 @@ namespace ucarkadir.Controllers
 
             return View();
         }
+
+        [AllowAnonymous]
+        [HttpPost]
+        public ActionResult ForgetPassword(User user)
+        {
+
+            return View();
+        }
     }
 }
