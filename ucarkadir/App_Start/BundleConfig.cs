@@ -36,6 +36,29 @@ namespace ucarkadir
                    "~/Scripts/smooth.js",
                    "~/Scripts/swiper-initialize.js"));
 
+            // LoginBundle
+            bundles.Add(new StyleBundle("~/Content/Login").Include(
+                    "~/Content/assets/css/normalize.css",
+                    "~/Content/assets/css/bootstrap.min.css",
+                    "~/Content/assets/css/font-awesome.min.css",
+                    "~/Content/assets/css/themify-icons.css",
+                    "~/Content/assets/css/flag-icon.min.css",
+                    "~/Content/assets/css/cs-skin-elastic.css",
+                    "~/Content/assets/scss/style.css")                
+                );
+
+            bundles.Add(new ScriptBundle("~/bundles/login").Include(
+               "~/Content/assets/js/vendor/jquery-2.1.4.min.js",
+               "~/Content/assets/js/popper.min.js",
+               "~/Content/assets/js/plugins.js",
+               "~/Content/assets/js/main.js"
+
+
+
+               ));
+
+
+
         }
     }
 }
