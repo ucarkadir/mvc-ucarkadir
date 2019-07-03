@@ -213,6 +213,10 @@
     <Compile Include="Migrations\201906272027148_UserAndRole.Designer.cs">
       <DependentUpon>201906272027148_UserAndRole.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201907031530431_UserEmail.cs" />
+    <Compile Include="Migrations\201907031530431_UserEmail.Designer.cs">
+      <DependentUpon>201907031530431_UserEmail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cat.cs" />
     <Compile Include="Models\Content.cs" />
@@ -831,6 +835,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906272027148_UserAndRole.resx">
       <DependentUpon>201906272027148_UserAndRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201907031530431_UserEmail.resx">
+      <DependentUpon>201907031530431_UserEmail.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
