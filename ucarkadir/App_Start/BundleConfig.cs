@@ -36,28 +36,33 @@ namespace ucarkadir
                    "~/Scripts/smooth.js",
                    "~/Scripts/swiper-initialize.js"));
 
-            // LoginBundle
-            bundles.Add(new StyleBundle("~/Content/Login").Include(
-                    "~/Content/assets/css/normalize.css",
-                    "~/Content/assets/css/bootstrap.min.css",
-                    "~/Content/assets/css/font-awesome.min.css",
-                    "~/Content/assets/css/themify-icons.css",
-                    "~/Content/assets/css/flag-icon.min.css",
-                    "~/Content/assets/css/cs-skin-elastic.css",
-                    "~/Content/assets/scss/style.css")                
+
+
+
+            // AdminBundle
+            bundles.Add(new StyleBundle("~/Content/Management").Include(
+                    "~/Content/vendors/bootstrap/dist/css/bootstrap.min.css",                    
+                    "~/Content/vendors/font-awesome/css/font-awesome.min.css",
+                    "~/Content/vendors/themify-icons/css/themify-icons.css",
+                    "~/Content/vendors/flag-icon-css/css/flag-icon.min.css",
+                    "~/Content/vendors/selectFX/css/cs-skin-elastic.css",
+                    "~/Content/assets/css/style.css")                
                 );
 
-            bundles.Add(new ScriptBundle("~/bundles/login").Include(
-               "~/Content/assets/js/vendor/jquery-2.1.4.min.js",
-               "~/Content/assets/js/popper.min.js",
-               "~/Content/assets/js/plugins.js",
+            
+            //"~/Content/assets/js/vendor/jquery-2.1.4.min.js",
+
+            bundles.Add(new ScriptBundle("~/bundles/management").Include(
+               "~/Content/vendors/jquery/dist/jquery.min.js",
+               "~/Content/vendors/popper.js/dist/umd/popper.min.js",
+               "~/Content/vendors/bootstrap/dist/js/bootstrap.min.js",
                "~/Content/assets/js/main.js"
-
-
-
                ));
 
-
+            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+                "~/Content/vendors/jquery-validation/dist/jquery.validate.min.js",
+               "~/Content/vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"
+           ));
 
         }
     }
@@ -66,5 +71,11 @@ namespace ucarkadir
   bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                     "~/Scripts/umd/popper.min.js",
                   "~/Scripts/bootstrap.js",
-                  "~/Scripts/respond.js"));
+                  "~/Scripts/respond.js"));             
+                  
+    "~/Scripts/jquery-{version}.js",
+               "~/Content/assets/js/popper.min.js",
+               "~/Scripts/jquery.validate*",
+               "~/Scripts/bootstrap.min.js",
+               "~/Content/assets/js/plugins.js",
      */

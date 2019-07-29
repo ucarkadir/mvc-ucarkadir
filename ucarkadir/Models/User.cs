@@ -16,17 +16,19 @@ namespace ucarkadir.Models
         public int IDRole { get; set; }
         public virtual Role tRole { get; set; }
 
+        [Display(Name = "User Name")]
         [Required(ErrorMessage = "Kullanıcı adı boş geçilemez")]
         [StringLength(20)]
         [Column(TypeName = ("nvarchar"))]
         public string UserName { get; set; }
 
+        [Display(Name = "User Pasword")]
         [Required(ErrorMessage = "Kullanıcı şifresi boş geçilemez")]
         [StringLength(100)]
         [Column(TypeName = ("nvarchar"))]
         public string UserPassword { get; set; }
 
-        [Display(Name = "EPosta Adresi")]
+        [Display(Name = "User Email")]
         [Required(ErrorMessage = "Email boş geçilemez.")]
         [EmailAddress(ErrorMessage = "Geçirsiz Email Adresi.")]
         [StringLength(100)]
