@@ -14,5 +14,11 @@ namespace ucarkadir.Controllers
         {
             return View();
         }
+
+        [AllowAnonymous]
+        public ActionResult Template()
+        {
+            return View();
+        }
     }
 }
