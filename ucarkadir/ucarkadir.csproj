@@ -219,6 +219,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cat.cs" />
+    <Compile Include="Models\CatView.cs" />
     <Compile Include="Models\Content.cs" />
     <Compile Include="Models\Img.cs" />
     <Compile Include="Models\Page.cs" />
@@ -2900,6 +2901,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CatView\" />
     <Folder Include="_Html\login\" />
   </ItemGroup>
   <ItemGroup>
