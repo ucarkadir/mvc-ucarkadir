@@ -6,7 +6,7 @@ using System.Web;
 namespace ucarkadir.Models
 {
     public class CatView
-    {
-        public Cat tCat { get; set; }
+    {        
+        public IEnumerable<Cat> tCats { get; set; }
     }
 }

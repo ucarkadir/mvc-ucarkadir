@@ -1,4 +1,5 @@
-﻿<!doctype html>
+﻿
+<!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
@@ -8,13 +9,19 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@ViewBag.Title</title>
+    <title>Index</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="~/favicon.ico">
+    <link rel="shortcut icon" href="favicon.ico">
 
-    @Styles.Render("~/Content/Management")
+    <link href="Content/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="Content/vendors/themify-icons/css/themify-icons.css" rel="stylesheet" />
+    <link href="Content/vendors/flag-icon-css/css/flag-icon.min.css" rel="stylesheet" />
+    <link href="Content/vendors/selectFX/css/cs-skin-elastic.css" rel="stylesheet" />
+    <link href="Content/assets/css/style.css" rel="stylesheet" />
+
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -34,8 +41,8 @@
                         aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="./"><img src="~/Content/Images/logo.png" alt="Logo"></a>
-                <a class="navbar-brand hidden" href="./"><img src="~/Content/Images/logo2.png" alt="Logo"></a>
+                <a class="navbar-brand" href="./"><img src="Content/Images/logo.png" alt="Logo"></a>
+                <a class="navbar-brand hidden" href="./"><img src="Content/Images/logo2.png" alt="Logo"></a>
             </div>
 
             <div id="main-menu" class="main-menu collapse navbar-collapse">
@@ -194,7 +201,7 @@
                             <div class="dropdown-menu" aria-labelledby="message">
                                 <p class="red">You have 4 Mails</p>
                                 <a class="dropdown-item media bg-flat-color-1" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="~/Content/Images/avatar/1.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="Content/Images/avatar/1.jpg"></span>
                                     <span class="message media-body">
                                         <span class="name float-left">Jonathan Smith</span>
                                         <span class="time float-right">Just now</span>
@@ -202,7 +209,7 @@
                                     </span>
                                 </a>
                                 <a class="dropdown-item media bg-flat-color-4" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="~/Content/Images/avatar/2.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="Content/Images/avatar/2.jpg"></span>
                                     <span class="message media-body">
                                         <span class="name float-left">Jack Sanders</span>
                                         <span class="time float-right">5 minutes ago</span>
@@ -210,7 +217,7 @@
                                     </span>
                                 </a>
                                 <a class="dropdown-item media bg-flat-color-5" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="~/Content/Images/avatar/3.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="Content/Images/avatar/3.jpg"></span>
                                     <span class="message media-body">
                                         <span class="name float-left">Cheryl Wheeler</span>
                                         <span class="time float-right">10 minutes ago</span>
@@ -218,7 +225,7 @@
                                     </span>
                                 </a>
                                 <a class="dropdown-item media bg-flat-color-3" href="#">
-                                    <span class="photo media-left"><img alt="avatar" src="~/Content/Images/avatar/4.jpg"></span>
+                                    <span class="photo media-left"><img alt="avatar" src="Content/Images/avatar/4.jpg"></span>
                                     <span class="message media-body">
                                         <span class="name float-left">Rachel Santos</span>
                                         <span class="time float-right">15 minutes ago</span>
@@ -234,7 +241,7 @@
                     <div class="user-area dropdown float-right">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                            aria-expanded="false">
-                            <img class="user-avatar rounded-circle" src="~/Content/Images/admin.jpg" alt="User Avatar">
+                            <img class="user-avatar rounded-circle" src="Content/Images/admin.jpg" alt="User Avatar">
                         </a>
 
                         <div class="user-menu dropdown-menu">
@@ -300,19 +307,132 @@
 
         <div class="content mt-3">
 
-            @RenderBody()
+
+
+
+
+            <link href="Content/vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+            <link href="Content/vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css" rel="stylesheet" />
+
+
+            <div class="animated fadeIn">
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">Data Table</strong>
+                            </div>
+                            <div class="card-body">
+                                <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Salary</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <hr />
+            <p>
+                <a href="/Cat/Create">Create New</a>
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        NumberOfUse
+                    </th>
+                    <th>
+                        Statu
+                    </th>
+                    <th></th>
+                </tr>
+
+                <tr>
+                    <td>
+                        NewCat
+                    </td>
+                    <td>
+                        0
+                    </td>
+                    <td>
+                        <input checked="checked" class="check-box" disabled="disabled" type="checkbox" />
+                    </td>
+                    <td>
+                        <a href="/Cat/Edit/4">Edit</a> |
+                        <a href="/Cat/Details/4">Details</a> |
+                        <a href="/Cat/Delete/4">Delete</a>
+                    </td>
+                </tr>
+
+            </table>
+
 
         </div><!-- .content -->
     </div><!-- /#right-panel -->
     <!-- Right Panel -->
 
 
-    @Scripts.Render("~/bundles/management")
-    @Scripts.Render("~/bundles/jqueryval")
+    <script src="Content/vendors/jquery/dist/jquery.min.js"></script>
+    <script src="Content/vendors/popper.js/dist/umd/popper.min.js"></script>
+    <script src="Content/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="Content/assets/js/main.js"></script>
 
-    @RenderSection("scripts", required: false)
+    <script src="Content/vendors/jquery-validation/dist/jquery.validate.min.js"></script>
 
-    
+    <script src="Content/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="Content/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#bootstrap-data-table-export').DataTable();
+        });
+    </script>
+
+
+
+
+
+
+
+    <script>
+
+        $(document).ready(function () {
+            $('#bootstrap-data-table-export').DataTable({
+                "ajax": {
+                    "type": "GET",
+                    "url": "@Url.Action("GetData", "Home")",
+                    "datatype": "JSON"
+
+                },
+                "columns": [
+                    { "data": "Id" },
+                    { "data": "name" },
+                    { "data": "email" },
+                    { "data": "address" },
+                    { "data": "country" },
+                    { "data": "pin" }
+                ]
+            });
+        });
+
+    </script>
+  
+
+
 
 </body>
 </html>
