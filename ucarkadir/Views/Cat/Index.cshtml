@@ -5,15 +5,16 @@
 
 @Styles.Render("~/Content/datatables")
 
-<div class="animated fadeIn">
+<div class="animated ">
     <div class="row">
 
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <strong class="card-title">Data Table</strong>
+                    <strong class="card-title">    @ViewBag.Title </strong>
                 </div>
                 <div class="card-body">
+
                     <table id="bootstrap-data-table-export" class="table table-striped table-bordered">
                         <thead>
                             <tr>
@@ -23,56 +24,138 @@
                                 <th>Operation</th>
                             </tr>
                         </thead>
+                        <tbody></tbody>
                     </table>
+
                 </div>
             </div>
         </div>
     </div>
+
+
+    <!-- Modal Save/Update -->
+    <span>buraya save update </span>
+
+    <input type="text" name="tbCatName"><br>
+    <button id="btnSubmit"> Save </button>
+
+    
+
+
+    <!-- Modal Error -->
+    <div class="modal fade" id="errorModal" tabindex="-1" role="dialog" aria-labelledby="errorModal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-danger" id="exampleModalLongTitle">Error</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>I think there is something wrong</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </div>
 
-<p>clikc me</p>
 
 @section Scripts{
     @Scripts.Render("~/bundles/datatables")
 
 
-    @*<script>
-            jQuery(document).ready(function ($) {
-
-                $('#bootstrap-data-table-export').DataTable({
-                    "ajax": {
-                        "type": "GET",
-                        "url": "@Url.Action("cat","api")",
-                        "datatype": "JSON"
-                    },
-                    "columns": [
-                        { "data": "IDCat" },
-                        { "data": "Name" },
-                        { "data": "NumberOfUse" },
-                        { "data": "Status" }
-                    ]
-                });
-
-            });
-        </script>*@
 
 
     <script type="text/javascript">
         jQuery(document).ready(function ($) {
-            $('#bootstrap-data-table-export').DataTable({
-                processing: true,
-                serverSide: true,
-                ordering: false,
-                paging: false,
-                searching: false,
-                ajax: "@Url.Action("cat", "api")",
-                columns: [
-                    { "data": "IDCat" },
-                    { "data": "Name" },
-                    { "data": "NumberOfUse" },
-                    { "data": "Status" }
-                ]
+
+            var $table = $('#bootstrap-data-table-export');
+            var modalError = $("#errorModal");
+
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("cat","api")',
+                success: function (cats) {
+
+                    $.each(cats, function (i, cat) {
+                        var catStatus = (cat.Status == true) ? 'Aktif' : 'Pasif';
+
+                        $catTable = $([
+                            "<tr>",
+                            "    <td>" + cat.Name + "</td>",
+                            "    <td>" + cat.NumberOfUse + "</td>",
+                            "    <td>" + catStatus + "</td>",
+                            "    <td> Drop down list </td>",
+                            "</tr>"
+                        ].join("\n"));
+
+                        $table.append($catTable);
+                    });
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    jQuery("#errorModal .modal-body p")
+                        .append("<br /> Error Code: " + xhr.status
+                        + "<br />  Error: " + thrownError
+                        + "<br />  Error Response: " + xhr.responseText);
+
+                   $(modalError).modal();
+                }
             });
+
+            console.log($table);
+
+            var CatName = $('#tbCatName');
+
+            jQuery("#btnSubmit").on('click', function () {
+                var cat = { Name = CatName.val() , NumberOfUse = 0, Status = true };
+
+                $.ajax({
+                    type: 'POST',
+                    url: '@Url.Action("cat","api")',
+                    data: cat,
+                    success: function (newCat) {
+                        $catTable = $([
+                            "<tr>",
+                            "    <td>" + newCat.Name + "</td>",
+                            "    <td>" + newCat.NumberOfUse + "</td>",
+                            "    <td>" + newCat.Status + "</td>",
+                            "    <td> Drop down list </td>",
+                            "</tr>"
+                        ].join("\n"));
+
+                        $table.append($catTable);
+                    },
+                    error: function () {
+
+                    }
+                });
+            });
+
+
         });
     </script>
 }
+
+
+
+
+
+@*" <p> " + json[i].Name + " </p>" +
+    " <p> " + json[i].NumberOfUse + " </p>"*@
+
+
+@*// bir diğer örnek
+    //var json = $.parseJSON(data);
+    var json = cats;
+    $("#Categorys").empty();
+
+    for (var i = 0; i < json.length; ++i) {
+        $("#Categorys").append(json[i].Name);
+        console.log(json[i].Name);
+    }*@

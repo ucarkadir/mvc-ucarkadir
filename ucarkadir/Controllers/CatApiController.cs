@@ -15,8 +15,25 @@ namespace ucarkadir.Controllers
         [AcceptVerbs("GET")]
         [Route("api/cat")]
         public HttpResponseMessage Get()
+        {               
+            var cats = db.tCats.ToList();
+            
+            if (cats != null)
+            {
+                return Request.CreateResponse(HttpStatusCode.OK, cats);
+            }
+            else
+            {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Kayıt listesi boş");
+            }
+        }
+
+
+        [AcceptVerbs("POST")]
+        [Route("api/cat")]
+        public HttpResponseMessage Post()
         {
-            var cats = db.tCats.FirstOrDefault(x => x.Status != false);            
+            var cats = db.tCats.ToList();
 
             if (cats != null)
             {
@@ -24,7 +41,7 @@ namespace ucarkadir.Controllers
             }
             else
             {
-                return Request.CreateResponse(HttpStatusCode.BadRequest, "bulunamadı");
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Kayıt listesi boş");
             }
         }
     }
