@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 
 namespace ucarkadir.Models
 {
@@ -33,6 +34,7 @@ namespace ucarkadir.Models
         [Description("0 Pasif 1 Aktif")]
         public bool Status { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<Page> tPages { get; set; }
     }
 }

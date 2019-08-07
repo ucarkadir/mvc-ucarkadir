@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using ucarkadir.Data;
+using ucarkadir.Models;
 
 namespace ucarkadir.Controllers
 {
@@ -31,7 +32,7 @@ namespace ucarkadir.Controllers
 
         [AcceptVerbs("POST")]
         [Route("api/cat")]
-        public HttpResponseMessage Post()
+        public HttpResponseMessage Post(Cat cat)
         {
             var cats = db.tCats.ToList();
 
