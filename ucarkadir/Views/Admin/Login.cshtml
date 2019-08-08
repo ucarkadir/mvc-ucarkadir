@@ -5,94 +5,80 @@
     Layout = "~/Views/Shared/_LoginLayout.cshtml";
 }
 
-<div class="login-logo">
-    <a href="index.html">
-        <img class="align-content" src="http://dbhsoft.com/application/views/dbhsoft2/layouts/images/logo.png" alt="">
-    </a>
+
+<!-- Outer Row -->
+<div class="row justify-content-center">
+
+    <div class="col-xl-10 col-lg-12 col-md-9">
+
+        <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card-body p-0">
+                <!-- Nested Row within Card Body -->
+                <div class="row">
+                    <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                    <div class="col-lg-6">
+                        <div class="p-5">
+                            <div class="text-center">
+                                <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                            </div>
+
+                            @using (Html.BeginForm("Login", "Admin", FormMethod.Post, new { @class = "needs-validation user", @novalidate = "novalidate" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.EMail, new { @class = "text-capitalize" })
+                                    @Html.TextBoxFor(model => model.EMail,
+                                        new { type = "email", @class = "form-control form-control-user", placeHolder = "Please Enter Email Address...", @required = "required" })
+                                    <div class="invalid-feedback">
+                                        Please Enter Email Address...
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    @Html.LabelFor(model => model.UserPassword, new { @class = "text-capitalize" })
+                                    @Html.PasswordFor(model => model.UserPassword,
+                                        new { @class = "form-control form-control-user", placeHolder = "Please Enter An Password", @required = "required" })
+                                    <div class="invalid-feedback">
+                                        Please insert a password.
+                                    </div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="custom-control custom-checkbox small">
+                                        @Html.CheckBoxFor(m => m.RememberMe, new { @class = "custom-control-input", data_externalid = "23521" })
+                                        <label class="custom-control-label" for="customCheck">Remember Me</label>
+                                    </div>
+                                </div>
+
+                                <button type="submit" value="Login" class="btn btn-primary btn-user btn-block">Login</button>
+
+                            }
+
+
+                            <hr>
+                            <div class="text-center">
+                                <a class="small" href="~/Admin/ForgetPassword">Forget Password?</a>
+                            </div>
+                            <div class="text-center">
+                                <a class="small" href="~/Admin/Register">Create an Account!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 </div>
 
-@using (Html.BeginForm("Login", "Admin", FormMethod.Post , new { @class = "needs-validation", @novalidate = "novalidate" } ))
-{
-    @Html.AntiForgeryToken()
+@Scripts.Render("~/bundles/jqueryval")
 
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
 
-
-
-<div class="login-form">
-    <div class="form-group">
-
-        @Html.LabelFor(model => model.EMail, new { @class = "text-capitalize" })
-        @Html.TextBoxFor(model => model.EMail, 
-            new { type = "email", @class = "form-control", placeHolder = "Please enter an email", @required = "required" })
-         <div class="invalid-feedback">
-            Please provide a valid email.
-        </div>
-
-
-        @*
-            @Html.LabelFor(model => model.EMail)
-            @Html.TextBoxFor(model => model.EMail, new { @class = "form-control", placeHolder = "Lütfen Mail Giriniz", @required = "required" })
-            @Html.ValidationMessageFor(model => model.EMail, "", new { @class = "text-danger" })
-        *@
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(model => model.UserPassword, new { @class = "text-capitalize" })
-        @Html.PasswordFor(model => model.UserPassword, new { @class = "form-control", placeHolder = "Please Enter An Password", @required = "required" })
-        <div class="invalid-feedback">
-            Please insert a password.
-        </div>
-    
-    </div>
-    <div class="checkbox">
-        <label>            
-            @Html.CheckBoxFor(m => m.RememberMe, false) Remember Me
-        </label>
-        <label class="pull-right">
-            <a href="~/Admin/ForgetPassword">Forget Password?</a>
-        </label>
-
-    </div>
-
-    <button type="submit" value="Login" class="btn btn-success btn-flat m-b-30 m-t-30">Login</button>
-
-    @*@Html.ValidationSummary("", new { @class = "" })*@
-
-
-
-
-
-    </div>
-
-        }
-
-
-
-        @section Scripts {
-            @*@Scripts.Render("~/bundles/jqueryval")*@
-
-            <script type="text/javascript">
-                // Example starter JavaScript for disabling form submissions if there are invalid fields
-                (function () {
-                    'use strict';
-                    window.addEventListener('load', function () {
-                        // Fetch all the forms we want to apply custom Bootstrap validation styles to
-                        var forms = document.getElementsByClassName('needs-validation');
-                        // Loop over them and prevent submission
-                        var validation = Array.prototype.filter.call(forms, function (form) {
-                            form.addEventListener('submit', function (event) {
-                                if (form.checkValidity() === false) {
-                                    event.preventDefault();
-                                    event.stopPropagation();
-                                }
-                                form.classList.add('was-validated');
-                            }, false);
-                        });
-
-
-
-                    }, false);
-                })();
-
-
-            </script>
-        }
+}

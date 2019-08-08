@@ -8,12 +8,10 @@ namespace ucarkadir
         // For more information on bundling, visit https://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
+            // _______________________________________________________________________ ucarkadir
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            // buradan sıra ile işlem yapıyorum
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
                       "~/Content/mains.css",
@@ -32,14 +30,28 @@ namespace ucarkadir
             bundles.Add(new ScriptBundle("~/bundles/smooth").Include(
                     "~/Scripts/smooth.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/test").Include(
-                   "~/Scripts/smooth.js",
-                   "~/Scripts/swiper-initialize.js"));
+            // _______________________________________________________________________ SB Admin 2
+            bundles.Add(new StyleBundle("~/Content/SBAdmin").Include(
+                    "~/Content/SBAdmin/css/sb-admin-2.min.css",
+                    "~/Content/SBAdmin/vendor/fontawesome-free/css/all.min.css")
+            );         
+
+            bundles.Add(new ScriptBundle("~/bundles/SBAdmin").Include(
+                "~/Content/SBAdmin/vendor/jquery/jquery.min.js",
+                "~/Content/SBAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js",                        
+                "~/Content/SBAdmin/vendor/jquery-easing/jquery.easing.min.js",
+                "~/Content/SBAdmin/js/sb-admin-2.min.js")
+            );
+
+            bundles.Add(new ScriptBundle("~/bundles/IsValidation").Include(                 
+                "~/Scripts/is-validation.js"
+                  )
+              );
 
 
 
 
-            // AdminBundle
+            // _______________________________________________________________________ AdminBundle
             bundles.Add(new StyleBundle("~/Content/Management").Include(
                     "~/Content/vendors/bootstrap/dist/css/bootstrap.min.css",                    
                     "~/Content/vendors/font-awesome/css/font-awesome.min.css",

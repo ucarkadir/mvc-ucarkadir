@@ -1,47 +1,37 @@
-﻿<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
- <!--<![endif]-->
+﻿<!DOCTYPE html>
+<html lang="tr">
+
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@ViewBag.Title</title>    
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    @Styles.Render("~/Content/Management")
+    <title>@ViewBag.Title</title>
 
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Custom styles for this template-->
+    @Styles.Render("~/Content/SBAdmin")
 
-
+    <!-- Custom fonts for this template-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 </head>
-<body class="bg-dark">
+
+<body class="bg-gradient-primary">
+
+    <div class="container">
+
+        @RenderBody()
 
 
 
-
-    <div class="sufee-login d-flex align-content-center flex-wrap">
-        <div class="container">
-
-            <div class="login-content">
-
-                @RenderBody()
-
-
-               
-
-            </div>
-
-        </div>
     </div>
 
-    @Scripts.Render("~/bundles/management")
+
+    @Scripts.Render("~/bundles/SBAdmin")
     @RenderSection("scripts", required: false)
 
 </body>
+
 </html>
