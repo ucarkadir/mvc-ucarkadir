@@ -31,25 +31,26 @@ namespace ucarkadir
                     "~/Scripts/smooth.js"));
 
             // _______________________________________________________________________ SB Admin 2
-            bundles.Add(new StyleBundle("~/Content/SBAdmin").Include(
+            bundles.Add(new StyleBundle("~/Styles/SBAdmin").Include(
                     "~/Content/SBAdmin/css/sb-admin-2.min.css",
                     "~/Content/SBAdmin/vendor/fontawesome-free/css/all.min.css")
             );         
 
-            bundles.Add(new ScriptBundle("~/bundles/SBAdmin").Include(
+            bundles.Add(new ScriptBundle("~/Scripts/SBAdmin").Include(
                 "~/Content/SBAdmin/vendor/jquery/jquery.min.js",
                 "~/Content/SBAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js",                        
                 "~/Content/SBAdmin/vendor/jquery-easing/jquery.easing.min.js",
                 "~/Content/SBAdmin/js/sb-admin-2.min.js")
             );
 
-            bundles.Add(new ScriptBundle("~/bundles/IsValidation").Include(                 
-                "~/Scripts/is-validation.js"
-                  )
-              );
+            bundles.Add(new ScriptBundle("~/Scripts/validation").Include(
+                "~/Scripts/validation.js")
+            );
 
-
-
+            bundles.Add(new ScriptBundle("~/Scripts/jqueryvalidation").Include(
+                "~/Scripts/jquery.validate.min.js",
+                "~/Scripts/jquery.validate.unobtrusive.min.js"
+            ));
 
             // _______________________________________________________________________ AdminBundle
             bundles.Add(new StyleBundle("~/Content/Management").Include(
@@ -87,6 +88,7 @@ namespace ucarkadir
                     "~/Content/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"
                 ));
 
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

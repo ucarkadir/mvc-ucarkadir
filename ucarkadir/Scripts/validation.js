@@ -1,5 +1,4 @@
-﻿<script type="text/javascript">
-    // Example starter JavaScript for disabling form submissions if there are invalid fields
+﻿    // Example starter JavaScript for disabling form submissions if there are invalid fields
     (function () {
         'use strict';
     window.addEventListener('load', function () {
@@ -20,4 +19,3 @@
 
 }, false);
 })();
-</script>
