@@ -31,11 +31,12 @@ namespace ucarkadir
                     "~/Scripts/smooth.js"));
 
             // _______________________________________________________________________ SB Admin 2
-            bundles.Add(new StyleBundle("~/Styles/SBAdmin").Include(
+            bundles.Add(new StyleBundle("~/Content/SBAdmin/all").Include(
                     "~/Content/SBAdmin/css/sb-admin-2.min.css",
                     "~/Content/SBAdmin/vendor/fontawesome-free/css/all.min.css")
-            );         
-
+            );
+                    
+            
             bundles.Add(new ScriptBundle("~/Scripts/SBAdmin").Include(
                 "~/Content/SBAdmin/vendor/jquery/jquery.min.js",
                 "~/Content/SBAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js",                        
@@ -51,6 +52,24 @@ namespace ucarkadir
                 "~/Scripts/jquery.validate.min.js",
                 "~/Scripts/jquery.validate.unobtrusive.min.js"
             ));
+
+            bundles.Add(new ScriptBundle("~/Scripts/chart").Include(
+               "~/Content/SBAdmin/vendor/chart.js/Chart.min.js",
+               "~/Content/SBAdmin/js/demo/chart-area-demo.js",
+               "~/Content/SBAdmin/js/demo/chart-pie-demo.js")
+               );
+            
+
+            // datatables
+            bundles.Add(new StyleBundle("~/Content/SBAdmin/datatables").Include(
+                "~/Content/SBAdmin/vendor/datatables/dataTables.bootstrap4.min.css")
+                );
+
+            bundles.Add(new ScriptBundle("~/Scripts/datatables").Include(
+                "~/Content/SBAdmin/vendor/datatables/jquery.dataTables.min.js",                "~/Content/SBAdmin/vendor/datatables/dataTables.bootstrap4.min.js")
+                );
+
+
 
             // _______________________________________________________________________ AdminBundle
             bundles.Add(new StyleBundle("~/Content/Management").Include(
@@ -88,6 +107,7 @@ namespace ucarkadir
                     "~/Content/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"
                 ));
 
+            // todo proje yayınlamadan önce true çekilmelidir.
             BundleTable.EnableOptimizations = true;
         }
     }

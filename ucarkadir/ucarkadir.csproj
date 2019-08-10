@@ -2207,7 +2207,6 @@
     <Content Include="_Html\scss\pages\_contact.scss" />
     <Content Include="_Html\scss\pages\_home.scss" />
     <Content Include="Views\Admin\Login.cshtml" />
-    <None Include="Views\Admin\_Login.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
     <Content Include="Views\Shared\_LoginLayout.cshtml" />
     <Content Include="Views\Shared\_DashboardLayout.cshtml" />
@@ -2223,7 +2222,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\Dashboard\Template.cshtml" />
     <Content Include="Views\Cat\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
