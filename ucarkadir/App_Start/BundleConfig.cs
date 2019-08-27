@@ -37,7 +37,7 @@ namespace ucarkadir
             );
                     
             
-            bundles.Add(new ScriptBundle("~/Scripts/SBAdmin").Include(
+            bundles.Add(new ScriptBundle("~/Scripts/SBAdmin/all").Include(
                 "~/Content/SBAdmin/vendor/jquery/jquery.min.js",
                 "~/Content/SBAdmin/vendor/bootstrap/js/bootstrap.bundle.min.js",                        
                 "~/Content/SBAdmin/vendor/jquery-easing/jquery.easing.min.js",
@@ -53,7 +53,7 @@ namespace ucarkadir
                 "~/Scripts/jquery.validate.unobtrusive.min.js"
             ));
 
-            bundles.Add(new ScriptBundle("~/Scripts/chart").Include(
+            bundles.Add(new ScriptBundle("~/Scripts/SBAdmin/chart").Include(
                "~/Content/SBAdmin/vendor/chart.js/Chart.min.js",
                "~/Content/SBAdmin/js/demo/chart-area-demo.js",
                "~/Content/SBAdmin/js/demo/chart-pie-demo.js")
@@ -65,50 +65,12 @@ namespace ucarkadir
                 "~/Content/SBAdmin/vendor/datatables/dataTables.bootstrap4.min.css")
                 );
 
-            bundles.Add(new ScriptBundle("~/Scripts/datatables").Include(
+            bundles.Add(new ScriptBundle("~/Scripts/SBAdmin/datatables").Include(
                 "~/Content/SBAdmin/vendor/datatables/jquery.dataTables.min.js",                "~/Content/SBAdmin/vendor/datatables/dataTables.bootstrap4.min.js")
                 );
 
-
-
-            // _______________________________________________________________________ AdminBundle
-            bundles.Add(new StyleBundle("~/Content/Management").Include(
-                    "~/Content/vendors/bootstrap/dist/css/bootstrap.min.css",                    
-                    "~/Content/vendors/font-awesome/css/font-awesome.min.css",
-                    "~/Content/vendors/themify-icons/css/themify-icons.css",
-                    "~/Content/vendors/flag-icon-css/css/flag-icon.min.css",
-                    "~/Content/vendors/selectFX/css/cs-skin-elastic.css",
-                    "~/Content/assets/css/style.css")                
-                );
-
-            
-            //"~/Content/assets/js/vendor/jquery-2.1.4.min.js",
-
-            bundles.Add(new ScriptBundle("~/bundles/management").Include(
-               "~/Content/vendors/jquery/dist/jquery.min.js",
-               "~/Content/vendors/popper.js/dist/umd/popper.min.js",
-               "~/Content/vendors/bootstrap/dist/js/bootstrap.min.js",
-               "~/Content/assets/js/main.js"
-               ));
-
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                "~/Content/vendors/jquery-validation/dist/jquery.validate.min.js",
-               "~/Content/vendors/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js"
-           ));
-
-
-            bundles.Add(new StyleBundle("~/Content/datatables").Include(
-                "~/Content/vendors/datatables.net-bs4/css/dataTables.bootstrap4.min.css",
-                "~/Content/vendors/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css"
-                ));
-
-            bundles.Add(new ScriptBundle("~/bundles/datatables").Include(
-                    "~/Content/vendors/datatables.net/js/jquery.dataTables.min.js",
-                    "~/Content/vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js"
-                ));
-
-            // todo proje yayınlamadan önce true çekilmelidir.
-            BundleTable.EnableOptimizations = true;
+            // minified 
+            BundleTable.EnableOptimizations = false;
         }
     }
 }
